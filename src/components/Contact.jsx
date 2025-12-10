@@ -46,7 +46,8 @@ export default function Contact() {
             className="w-8 h-5 object-cover rounded-sm border border-slate-700"
             alt="Pakistan Flag"
           />
-         Commerical 20, Khawaja Banglows, RYK, Pakistan
+          Commerical 20, Khawaja Banglows, RYK, Pakistan commerical 20, khawaja
+          banglows, RYK. PAKISTAN
         </span>,
 
         <span className="flex items-center gap-3" key="dubai">
@@ -72,13 +73,17 @@ export default function Contact() {
     {
       icon: <Phone className="w-6 h-6" />,
       title: "Call Us",
+
       lines: ["+97450445267", "+923216716065"],
     },
 
     {
       icon: <Mail className="w-6 h-6" />,
       title: "Email Us",
+
       lines: ["info@smjsols.com"],
+
+      lines: ["info@smjsols.com", "support@smjsols.com"],
     },
 
     {

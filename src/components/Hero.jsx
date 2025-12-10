@@ -1,6 +1,6 @@
 import React, { useRef, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { ChevronRight, ArrowRight } from "lucide-react";
+import { ChevronRight, ArrowRight, Zap, Users, Award } from "lucide-react";
 import hero from "../assets/hero.jpg";
 
 export default function Hero() {
@@ -269,17 +269,16 @@ export default function Hero() {
         }}
       ></div>
 
-      <div className="max-w-7xl mx-auto relative z-10 w-full">
+      {/* MOBILE & LAPTOP: TWO-COLUMN LAYOUT */}
+      <div className="md:hidden lg:block max-w-7xl mx-auto relative z-10 w-full">
         <div className="grid md:grid-cols-2 gap-14 items-center">
           {/* LEFT CONTENT */}
           <div className="space-y-6 text-center md:text-left">
             <h1 className="font-extrabold animate-fade-in-up text-center md:text-center lg:text-left">
-              {/* Line 1 */}
               <span className="block text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-snug sm:leading-snug md:leading-snug lg:leading-tight">
                 Empowering Businesses with
               </span>
 
-              {/* Line 2 */}
               <span className="block mt-2 bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-snug sm:leading-snug md:leading-snug lg:leading-tight">
                 Digital Innovation & Automation
               </span>
@@ -315,62 +314,29 @@ export default function Hero() {
             </div>
 
             {/* Key Stats */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-700/50 max-w-xl mx-auto md:mx-0  animate-fade-in-up stagger-3">
+            <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 pt-6 border-t border-slate-700/50 max-w-xl mx-auto md:mx-0 animate-fade-in-up stagger-3">
               <div className="text-center transform hover:scale-110 transition-transform">
-                <div className="text-3xl font-bold text-cyan-400 animate-fade-in-up ">
-                  300+
-                </div>
+                <div className="text-3xl font-bold text-cyan-400">300+</div>
                 <div className="text-sm text-slate-300">Projects Completed</div>
               </div>
               <div className="text-center transform hover:scale-110 transition-transform">
-                <div className="text-3xl font-bold text-cyan-400 animate-fade-in-up stagger-1 ">
-                  50+
-                </div>
+                <div className="text-3xl font-bold text-cyan-400">50+</div>
                 <div className="text-sm text-slate-300">Team Members</div>
               </div>
               <div className="text-center transform hover:scale-110 transition-transform">
-                <div className="text-3xl font-bold text-cyan-400 animate-fade-in-up stagger-2 ">
-                  7+
-                </div>
+                <div className="text-3xl font-bold text-cyan-400">7+</div>
                 <div className="text-sm text-slate-300">Years in Business</div>
               </div>
             </div>
           </div>
 
           {/* RIGHT SIDE IMAGE */}
-          {/* RIGHT SIDE IMAGE */}
           <div className="relative flex justify-center md:justify-end hero-enter">
-            <div
-              className="
-      hero-float
-      relative
-      w-[320px]
-      sm:w-[380px]
-      md:w-[460px]
-      lg:w-[520px]
-      aspect-[4/3]
-      rounded-2xl
-      overflow-hidden
-      bg-gradient-to-br from-slate-800/50 to-slate-950/60
-      backdrop-blur-xl
-      shadow-2xl shadow-cyan-500/15
-      transition-all duration-700 ease-out
-      hover:scale-[1.04]
-      group
-    "
-            >
+            <div className="hero-float relative w-[320px] sm:w-[380px] md:w-[460px] lg:w-[520px] aspect-[4/3] rounded-2xl overflow-hidden bg-gradient-to-br from-slate-800/50 to-slate-950/60 backdrop-blur-xl shadow-2xl shadow-cyan-500/15 transition-all duration-700 ease-out hover:scale-[1.04] group">
               <img
                 src={hero}
                 alt="Digital Innovation"
-                className="
-        w-full
-        h-full
-        object-cover
-        transition-transform
-        duration-700
-        ease-out
-        group-hover:scale-[1.08]
-      "
+                className="w-full h-full object-cover transition-transform duration-700 ease-out group-hover:scale-[1.08]"
               />
 
               {/* Soft cinematic overlay */}
@@ -378,23 +344,118 @@ export default function Hero() {
             </div>
 
             {/* Ambient glow */}
-            <div
-              className="
-      absolute
-      -bottom-12
-      -right-12
-      w-[280px]
-      h-[280px]
-      md:w-[360px]
-      md:h-[360px]
-      bg-gradient-to-br from-cyan-500 to-blue-600
-      rounded-full
-      opacity-25
-      blur-[90px]
-      -z-10
-    "
-            />
+            <div className="absolute -bottom-12 -right-12 w-[280px] h-[280px] md:w-[360px] md:h-[360px] bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full opacity-25 blur-[90px] -z-10" />
           </div>
+        </div>
+      </div>
+
+      {/* TABLET: CENTERED VERTICAL LAYOUT */}
+      <div className="hidden md:block lg:hidden max-w-5xl mx-auto relative z-10 w-full">
+        {/* HEADING - CENTERED */}
+        <div className="text-center space-y-6 md:space-y-8 mb-10 md:mb-12 animate-fade-in-up">
+          <h1 className="font-extrabold">
+            <span className="block text-4xl md:text-5xl leading-tight text-white mb-3 md:mb-4">
+              Empowering Businesses with
+            </span>
+            <span className="block bg-gradient-to-r from-cyan-400 via-blue-400 to-blue-500 bg-clip-text text-transparent text-4xl md:text-5xl leading-tight">
+              Digital Innovation & Automation
+            </span>
+          </h1>
+
+          <p className="text-base md:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            We build modern software, powerful AI automation systems, and
+            high-performance digital strategies that drive measurable growth.
+          </p>
+        </div>
+
+        {/* BUTTONS - CENTERED BELOW HEADING */}
+        <div className="flex flex-col sm:flex-row gap-4 md:gap-6 justify-center mb-10 md:mb-14 flex-wrap animate-fade-in-up">
+          <button
+            onClick={handleGetConsultation}
+            className="group relative bg-gradient-to-r from-cyan-500 to-blue-600 px-8 md:px-10 py-3 md:py-4 rounded-lg font-medium md:text-lg transition-all hover:shadow-lg hover:shadow-cyan-500/50 hover:scale-105 active:scale-95 backdrop-blur-sm border border-cyan-400/20 cursor-pointer whitespace-nowrap"
+          >
+            <span className="relative z-10 flex items-center justify-center space-x-2">
+              <span>Get a Free Consultation</span>
+              <ChevronRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
+            </span>
+          </button>
+
+          <button
+            onClick={() => {
+              const element = document.getElementById("services");
+              if (element) element.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="group border border-cyan-500/50 px-8 md:px-10 py-3 md:py-4 rounded-lg font-medium md:text-lg hover:bg-cyan-500/10 transition-all backdrop-blur-sm flex items-center justify-center space-x-2 hover:border-cyan-400 active:scale-95 cursor-pointer whitespace-nowrap"
+          >
+            <span>Explore Our Services</span>
+            <ArrowRight className="w-5 h-5 md:w-6 md:h-6 group-hover:translate-x-1 transition-transform" />
+          </button>
+        </div>
+
+        {/* DIVIDER LINE */}
+        <div className="flex items-center justify-center gap-4 mb-12 md:mb-16 animate-fade-in-up">
+          <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent flex-1 max-w-xs md:max-w-sm"></div>
+          <div className="w-2 h-2 md:w-3 md:h-3 rounded-full bg-cyan-400/60"></div>
+          <div className="h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent flex-1 max-w-xs md:max-w-sm"></div>
+        </div>
+
+        {/* STATS SECTION */}
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 md:gap-8 mb-12 md:mb-16 animate-fade-in-up">
+          {/* Stat 1 */}
+          <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-slate-800/40 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/50 hover:bg-slate-800/60 transition-all duration-300 group cursor-pointer">
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-cyan-500/30 to-blue-500/30 flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+              <Zap className="w-6 h-6 md:w-7 md:h-7 text-cyan-400" />
+            </div>
+            <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2 md:mb-3">
+              300+
+            </div>
+            <div className="text-xs md:text-sm text-slate-300">
+              Projects Completed
+            </div>
+          </div>
+
+          {/* Stat 2 */}
+          <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-slate-800/40 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/50 hover:bg-slate-800/60 transition-all duration-300 group cursor-pointer">
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-blue-500/30 to-cyan-500/30 flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+              <Users className="w-6 h-6 md:w-7 md:h-7 text-blue-400" />
+            </div>
+            <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2 md:mb-3">
+              50+
+            </div>
+            <div className="text-xs md:text-sm text-slate-300">
+              Team Members
+            </div>
+          </div>
+
+          {/* Stat 3 */}
+          <div className="flex flex-col items-center text-center p-6 md:p-8 rounded-2xl bg-slate-800/40 backdrop-blur-md border border-cyan-500/20 hover:border-cyan-400/50 hover:bg-slate-800/60 transition-all duration-300 group cursor-pointer">
+            <div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-cyan-500/30 to-blue-500/30 flex items-center justify-center mb-3 md:mb-4 group-hover:scale-110 transition-transform">
+              <Award className="w-6 h-6 md:w-7 md:h-7 text-cyan-400" />
+            </div>
+            <div className="text-4xl md:text-5xl font-bold text-cyan-400 mb-2 md:mb-3">
+              7+
+            </div>
+            <div className="text-xs md:text-sm text-slate-300">
+              Years in Business
+            </div>
+          </div>
+        </div>
+
+        {/* IMAGE SECTION - BOTTOM */}
+        <div className="relative w-full animate-fade-in-up">
+          <div className="relative w-full rounded-3xl overflow-hidden bg-gradient-to-br from-slate-800/50 to-slate-950/60 backdrop-blur-xl shadow-2xl shadow-cyan-500/20 border border-cyan-500/20 group hover:border-cyan-400/40 transition-all duration-500">
+            <div className="relative overflow-hidden h-80 md:h-96">
+              <img
+                src={hero}
+                alt="Digital Innovation"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+              />
+              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500/10 via-transparent to-blue-600/15 pointer-events-none" />
+            </div>
+          </div>
+
+          {/* Ambient glow behind image */}
+          <div className="absolute -bottom-32 md:-bottom-40 left-1/2 -translate-x-1/2 w-[500px] md:w-[600px] h-[500px] md:h-[600px] bg-gradient-to-br from-cyan-500 to-blue-600 rounded-full opacity-15 blur-[120px] -z-10" />
         </div>
       </div>
     </section>
