@@ -82,8 +82,6 @@ export default function Contact() {
       title: "Email Us",
 
       lines: ["info@smjsols.com"],
-
-      lines: ["info@smjsols.com", "support@smjsols.com"],
     },
 
     {
